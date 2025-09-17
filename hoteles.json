@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Alvear Palace Hotel",
+    "direccion": "Avenida Alvear 1891",
+    "ciudad": "Buenos Aires",
+    "cantidad_de_estrellas": 5
+  },
+  {
+    "id": 2,
+    "nombre": "Hotel Llao Llao",
+    "direccion": "Av. Bustillo Km 25",
+    "ciudad": "San Carlos de Bariloche",
+    "cantidad_de_estrellas": 5
+  },
+  {
+    "id": 3,
+    "nombre": "Sheraton Mendoza Hotel",
+    "direccion": "Primitivo de la Reta 989",
+    "ciudad": "Mendoza",
+    "cantidad_de_estrellas": 4
+  },
+  {
+    "id": 4,
+    "nombre": "NH Gran Hotel Provincial",
+    "direccion": "Patricio Peralta Ramos 2502",
+    "ciudad": "Mar del Plata",
+    "cantidad_de_estrellas": 5
+  },
+  {
+    "id": 5,
+    "nombre": "Hotel Amerian Salta",
+    "direccion": "Córdoba 376",
+    "ciudad": "Salta",
+    "cantidad_de_estrellas": 4
+  },
+  {
+    "id": 6,
+    "nombre": "Hotel Austral Ushuaia",
+    "direccion": "9 de Julio 250",
+    "ciudad": "Ushuaia",
+    "cantidad_de_estrellas": 3
+  }
+]

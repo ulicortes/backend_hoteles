@@ -1,0 +1,25 @@
+###
+GET http://localhost:3002/hoteles 
+###
+GET http://localhost:3002/hoteles/5
+###
+GET http://localhost:3002/hoteles/10
+###
+POST http://localhost:3002/hoteles/nuevo
+Content-Type: application/json
+
+{
+    "nombre": "Hotel Austral Ushuaia",
+    "direccion": "9 de Julio 250",
+    "estrellas": 3,
+    "ciudad": "Ushuaia"
+  }
+###
+DELETE http://localhost:3002/hoteles/11
+###
+PATCH http://localhost:3002/hoteles/5
+Content-Type: application/json
+
+{
+  "estrellas": 3
+}
