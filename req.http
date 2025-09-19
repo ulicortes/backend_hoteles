@@ -47,7 +47,7 @@ Content-Type: application/json
 }
 ### autenticacion
 GET http://localhost:3002/hoteles 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJyb2wiOiJ1c3VhcmlvIiwiaWF0IjoxNzU4MjI0ODE4LCJleHAiOjE3NTgyMjg0MTh9.fTVnTJ_OgtVpNxnNs5myPWejcCDHtDTALoJz4gRriUY
+Authorization: Bearer []
 Content-Type: application/json
 
 {
