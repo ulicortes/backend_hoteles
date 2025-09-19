@@ -1,9 +1,10 @@
 import pool from "../config/db.js";
 
-export const traerHoteles = async (req, res) => {
+export const traerHoteles = async (ingreso, salida) => {
     let client = await pool.connect();
     try {
-        let r = await client.query('SELECT * from hotel')
+        let r = await client.query("select h.*, array(select ha.id from habitacion ha where ha.hotel=h.id and ha.id not in (select habitacion from reserva where ingreso>=$1 and salida<=$2)) as habit from hotel h", [ingreso, salida])
+        // let r = await client.query("select distinct h.* from hotel h join habitacion ha on h.id=ha.hotel where ha.id not in (select habitacion from reserva where ingreso>=$1 and salida<=$2)", [ingreso, salida])
         return r.rows;
     } catch (error) {
         return new Error("Algo salio mal :(");
@@ -13,14 +14,14 @@ export const traerHoteles = async (req, res) => {
     }
 }
 
-export const traerUnHotel = async (id) => {
+export const traerUnHotel = async (id, h) => {
     let client = await pool.connect();
     try {
-        let r = await client.query(`SELECT * from hotel where id=${id}`)
+        let r = await client.query(`select * from habitacion where hotel=$1 and id in (${h})`, [id]);
         if (r.rowCount == 0) {
             throw new Error(`No existe hotel con id=${id}`)
         }
-        return r.rows[0];
+        return r.rows;
     } catch (error) {
         return error;
     }

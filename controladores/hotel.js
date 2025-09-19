@@ -1,14 +1,23 @@
 import { traerHoteles, traerUnHotel, agregarHotel, borrarHotel, editarHotel } from "../modelos/hotel.js";
 
 export const getHotels = async (req, res) => {
-    const hoteles = await traerHoteles();
+    // const fechas = req.body;
+    const { ingreso, salida } = req.query
+    const hoteles = await traerHoteles(ingreso, salida);
     if (hoteles.name == "Error") res.status(404).send(hoteles.message)
     else res.status(200).send(hoteles);
 }
 
 export const getHotel = async (req, res) => {
     let { id } = req.params;
-    const hotel = await traerUnHotel(id);
+    let habitaciones = "";
+    let q_habitaciones = req.body.habitaciones; 
+    let size = q_habitaciones.length - 1;
+    q_habitaciones.map((hab, index) => {
+        habitaciones += `${hab}`
+        if (index < size) habitaciones += ", "
+    });
+    const hotel = await traerUnHotel(id, habitaciones);
     if (hotel.name == "Error") res.status(404).send(hotel.message)
     else res.status(200).send(hotel)
 }

@@ -1,7 +1,12 @@
 ###
-GET http://localhost:3002/hoteles 
+GET http://localhost:3002/hoteles?ingreso=19sep2025&salida=22sep2025
 ###
 GET http://localhost:3002/hoteles/5
+Content-Type: application/json
+
+{
+  "habitaciones": [4, 3]
+}
 ###
 GET http://localhost:3002/hoteles/10
 ###
@@ -42,7 +47,7 @@ Content-Type: application/json
 }
 ### autenticacion
 GET http://localhost:3002/hoteles 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJyb2wiOiJ1c3VhcmlvIiwiaWF0IjoxNzU4MjA3OTIxLCJleHAiOjE3NTgyMTE1MjF9.tnOQ2a4xsn6jT_dA0tjPaq8EuVUO2oJCmlPOt2JnZDM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJyb2wiOiJ1c3VhcmlvIiwiaWF0IjoxNzU4MjI0ODE4LCJleHAiOjE3NTgyMjg0MTh9.fTVnTJ_OgtVpNxnNs5myPWejcCDHtDTALoJz4gRriUY
 Content-Type: application/json
 
 {

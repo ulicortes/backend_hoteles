@@ -3,7 +3,7 @@ import { deleteHotel, getHotel, getHotels, newHotel, editHotel } from '../contro
 import { autenticacion } from '../middleware/auth.js';
 export const router = express.Router();
 
-router.get('/', autenticacion, getHotels);
+router.get('/', getHotels);
 router.get('/:id', getHotel);
 router.post('/nuevo', newHotel);
 router.delete('/:id', deleteHotel);
