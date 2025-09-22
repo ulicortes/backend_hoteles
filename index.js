@@ -12,3 +12,6 @@ app.use('/reserva', reservas);
 app.listen(3002, () => {
     console.log("Escuchando en http://localhost:3002")
 })
+process.on('exit', () => {
+    console.log("CERRANDO SERVIDOR")
+})

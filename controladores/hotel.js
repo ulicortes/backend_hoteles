@@ -1,7 +1,6 @@
 import { traerHoteles, traerUnHotel, agregarHotel, borrarHotel, editarHotel } from "../modelos/hotel.js";
 
 export const getHotels = async (req, res) => {
-    // const fechas = req.body;
     const { ingreso, salida } = req.query
     const hoteles = await traerHoteles(ingreso, salida);
     if (hoteles.name == "Error") res.status(404).send(hoteles.message)
